@@ -1,0 +1,35 @@
+.emergency-box {
+  background: #fff5f5;
+  border: 2px solid #fecaca;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
+}
+
+.emergency-box h3 {
+  color: #dc2626;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.contact-item {
+  background: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: .3s;
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
+}
+
+.contact-item strong {
+  color: #dc2626;
+  font-size: 1.1rem;
+}

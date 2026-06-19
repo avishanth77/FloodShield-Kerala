@@ -1,0 +1,172 @@
+.shelters-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 20px 60px;
+}
+
+.shelter-header {
+  margin-bottom: 40px;
+}
+
+.shelter-header h1 {
+  font-size: 3rem;
+  color: #004ac6;
+  margin-bottom: 10px;
+}
+
+.shelter-header p {
+  color: #666;
+}
+
+.shelter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.shelter-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.shelter-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card-top h3 {
+  color: #222;
+}
+
+.district {
+  margin-top: 15px;
+  color: #555;
+}
+
+.address {
+  margin-top: 10px;
+  color: #777;
+  line-height: 1.6;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  min-width: fit-content;
+}
+.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.filling-fast {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.full {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.needs-supplies {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.occupancy {
+  margin-top: 20px;
+}
+
+.occupancy-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #004ac6;
+  border-radius: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.details-btn {
+  flex: 1;
+  background: #004ac6;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.direction-btn {
+  border: 1px solid #004ac6;
+  color: #004ac6;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media(max-width:992px) {
+  .shelter-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px) {
+  .shelter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shelter-header h1 {
+    font-size: 2rem;
+  }
+}
+
+
+.shelter-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+  transition: all 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.shelter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 74, 198, 0.18);
+}

@@ -1,0 +1,79 @@
+.deployment-card {
+  background: #fff;
+  border: 1px solid #d7dce5;
+  border-radius: 24px;
+  overflow: hidden;
+ 
+}
+
+.deployment-card h3 {
+  padding: 22px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.deployment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.deployment-table thead {
+  background: #f3f4f6;
+}
+
+.deployment-table th {
+  text-align: left;
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.deployment-table td {
+  padding: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.skill-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: white;
+  font-size: 14px;
+}
+
+.rescue {
+  background: #2563eb;
+}
+
+.medical {
+  background: #16a34a;
+}
+
+.logistics {
+  background: #c7d2fe;
+  color: #111827;
+}
+
+.status {
+  font-weight: 600;
+}
+
+.deployed {
+  color: #15803d;
+}
+
+.standby {
+  color: #374151;
+}
+
+.returning {
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .deployment-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

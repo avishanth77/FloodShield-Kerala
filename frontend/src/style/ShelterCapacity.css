@@ -1,0 +1,57 @@
+.capacity-card {
+  background: #fff;
+  border: 1px solid #d7dce5;
+  border-radius: 24px;
+  padding: 24px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.capacity-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.capacity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 16px;
+}
+
+.capacity-row:last-of-type {
+  border-bottom: none;
+}
+
+.capacity-row span:last-child {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.warning {
+  color: #f59e0b;
+}
+
+.danger {
+  color: #dc2626;
+}
+
+.resource-btn {
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  background: #195de6;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.resource-btn:hover {
+  background: #053377;
+}

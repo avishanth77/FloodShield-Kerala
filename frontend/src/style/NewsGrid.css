@@ -1,0 +1,26 @@
+.news-grid-section {
+  width: 100%;
+}
+
+.news-grid-section h2 {
+  font-size: 2rem;
+  color: #004ac6;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-grid-section h2 {
+    font-size: 1.7rem;
+  }
+}

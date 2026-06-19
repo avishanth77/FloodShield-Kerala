@@ -1,0 +1,268 @@
+/* src/styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+    /* Color Palette derived from your Tailwind config */
+    --background: #f7f9fb;
+    --on-background: #191c1e;
+    --surface-lowest: #ffffff;
+    --surface-low: #f2f4f6;
+    --on-surface-variant: #434655;
+    --primary: #004ac6;
+    --primary-container: #2563eb;
+    --on-primary-container: #eeefff;
+    --outline: #737686;
+    --outline-variant: #c3c6d7;
+    --error: #ba1a1a;
+    
+    /* Border Radii */
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1.5rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--on-background);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* --- Layout --- */
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+    
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--outline-variant);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1rem;
+    
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 24px;
+}
+
+/* --- Form Container --- */
+.form-card1 {
+    width: 100%;
+    max-width: 750px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #d7dce5;
+    box-shadow: 0 4px 15px rgba(0,0,0,.05);
+    margin: 0 auto;
+}
+
+/* --- Form Inputs --- */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 1rem;
+    padding-left: 4px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--on-surface-variant);
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+/* Adjust icon position specifically for textareas so it stays at the top */
+textarea.form-control ~ .input-icon, 
+.input-wrapper:has(textarea) .input-icon {
+    top: 16px;
+    transform: none;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px 16px 16px 48px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--outline);
+    background-color: var(--surface-low);
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--on-background);
+    transition: all 0.2s ease;
+    resize: none;
+}
+
+.form-control::placeholder {
+    color: var(--on-surface-variant);
+    opacity: 0.7;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(0, 74, 198, 0.15);
+}
+
+.form-control:focus ~ .input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: var(--primary);
+}
+
+/* --- Urgency Grid --- */
+.urgency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.urgency-btn {
+    padding: 16px 12px;
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--outline);
+    background-color: transparent;
+    color: var(--on-background);
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.urgency-btn:hover {
+    border-color: var(--primary);
+    background-color: var(--surface-low);
+}
+
+.urgency-btn.active {
+    border-color: var(--primary);
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+}
+
+/* Special styling for 'Life Threat' hover state */
+.urgency-btn:nth-child(3):hover:not(.active) {
+    border-color: var(--error);
+    color: var(--error);
+    background-color: transparent;
+}
+
+/* --- Submit Button --- */
+.btn-submit {
+    width: 100%;
+    padding: 20px;
+    margin-top: 8px;
+    background-color: var(--error);
+    color: white;
+    border-radius: var(--radius-xl);
+    font-size: 1.125rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 10px 15px -3px rgba(186, 26, 26, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+}
+
+.btn-submit:hover {
+    transform: scale(1.01);
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+    box-shadow: 0 4px 6px -1px rgba(186, 26, 26, 0.2);
+}
+/* --- Page Header Typography --- */
+.page-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+
+.page-subtitle {
+    color: var(--on-surface-variant);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* --- Text Buttons (e.g., "Use My Location") --- */
+.btn-text {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-family: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-text:hover {
+    background-color: var(--surface-low);
+    text-decoration: underline;
+}
+
+.icon-small {
+    font-size: 18px !important;
+}
