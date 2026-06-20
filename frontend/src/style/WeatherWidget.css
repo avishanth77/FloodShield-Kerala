@@ -35,3 +35,61 @@
   padding-top: 15px;
   border-top: 1px solid rgba(255,255,255,.3);
 }
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #004AC6;
+  font-weight: 600;
+  cursor: pointer;
+}
+.weather-widget h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-icon {
+  font-size: 20px;
+}
+
+.weather-location {
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  gap: 6px;
+  font-weight: 500;
+}
+
+.weather-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-box button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box svg,
+.weather-info svg,
+.weather-location svg {
+  font-size: 14px;
+}

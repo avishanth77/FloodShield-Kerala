@@ -1,0 +1,133 @@
+.dam-level-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+
+.dam-panel {
+  padding: var(--sp-md);
+}
+
+.dam-header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin: 0 0 var(--sp-md);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dam-header .material-symbols-outlined {
+  color: var(--error);
+}
+
+.dam-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.dam-card {
+  border-radius: 12px;
+  padding: var(--sp-sm);
+  transition: all 0.3s ease;
+}
+
+.dam-card:hover {
+  transform: translateY(-2px);
+}
+
+.dam-card.normal {
+  background: var(--surface-container-low);
+}
+
+.dam-card.warning {
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.2);
+}
+
+.dam-card.critical {
+  background: rgba(186, 26, 26, 0.1);
+  border: 1px solid var(--error-container);
+}
+
+.dam-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dam-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.dam-percentage {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dam-percentage.normal {
+  color: var(--primary);
+}
+
+.dam-percentage.warning {
+  color: #ff9800;
+}
+
+.dam-percentage.critical {
+  color: var(--error);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--surface-variant);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+
+.progress-fill.normal {
+  background: var(--primary);
+}
+
+.progress-fill.warning {
+  background: #ff9800;
+}
+
+.progress-fill.critical {
+  background: var(--error);
+}
+
+.dam-message {
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  line-height: 1.4;
+}
+
+.loading-text {
+  text-align: center;
+  padding: 20px;
+  color: var(--on-surface-variant);
+}
+
+@media (max-width: 768px) {
+  .dam-name,
+  .dam-percentage {
+    font-size: 13px;
+  }
+
+  .dam-message {
+    font-size: 11px;
+  }
+}

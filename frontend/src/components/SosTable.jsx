@@ -17,7 +17,7 @@ const SosTable = () => {
       const data = await response.json();
       setRequests(data);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching SOS requests:", error);
     }
   };
 
@@ -27,28 +27,47 @@ const SosTable = () => {
     return "resolved";
   };
 
+  const getTimeAgo = (dateString) => {
+    if (!dateString) return "N/A";
+
+    const now = new Date();
+    const created = new Date(dateString);
+
+    const diff = Math.floor((now - created) / 1000);
+
+    if (diff < 60) return `${diff} sec ago`;
+
+    if (diff < 3600)
+      return `${Math.floor(diff / 60)} min ago`;
+
+    if (diff < 86400)
+      return `${Math.floor(diff / 3600)} hr ago`;
+
+    return `${Math.floor(diff / 86400)} day ago`;
+  };
+
   return (
     <div className="sos-card">
       <div className="card-header">
         <h2>Recent SOS Requests</h2>
-        
       </div>
 
       <table className="sos-table">
         <thead>
           <tr>
-            <th>NAME / ID</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>EMERGENCY</th>
             <th>LOCATION</th>
             <th>STATUS</th>
-            <th>TIME ELAPSED</th>
-            
+            <th>TIME</th>
           </tr>
         </thead>
 
         <tbody>
           {requests.length === 0 ? (
             <tr>
-              <td colSpan="5" className="empty">
+              <td colSpan="6" className="empty">
                 No SOS Requests Found
               </td>
             </tr>
@@ -57,10 +76,14 @@ const SosTable = () => {
               <tr key={item.id}>
                 <td>
                   <div className="name-cell">
-                    <strong>{item.emergency_type}</strong>
+                    <strong>{item.name}</strong>
                     <span>#SOS-{item.id}</span>
                   </div>
                 </td>
+
+                <td>{item.phone}</td>
+
+                <td>{item.emergency_type}</td>
 
                 <td>{item.location}</td>
 
@@ -74,9 +97,28 @@ const SosTable = () => {
                   </span>
                 </td>
 
-                <td>Just now</td>
-
-                
+                <td>
+                  <div className="time-cell">
+                    <strong>
+                      {getTimeAgo(item.created_at)}
+                    </strong>
+                    <br />
+                    <small>
+                      {item.created_at
+                        ? new Date(item.created_at).toLocaleString(
+                            "en-IN",
+                            {
+                              day: "2-digit",
+                              month: "short",
+                              year: "numeric",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            }
+                          )
+                        : "N/A"}
+                    </small>
+                  </div>
+                </td>
               </tr>
             ))
           )}

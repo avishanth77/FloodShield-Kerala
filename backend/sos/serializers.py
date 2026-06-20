@@ -4,4 +4,4 @@ from .models import SOSRequest
 class SOSRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = SOSRequest
-        fields = '__all__'
+        fields = "__all__"

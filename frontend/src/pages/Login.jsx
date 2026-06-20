@@ -59,7 +59,14 @@ const Login = () => {
           "username",
           data.email || formData.email
         );
-
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            full_name: data.full_name,
+            phone: data.phone,
+            email: data.email,
+          })
+        );
         // Save Admin Status
         localStorage.setItem(
           "isAdmin",
@@ -192,7 +199,7 @@ const Login = () => {
               type="submit"
               className="lgx-btn"
             >
-              Login to Dashboard
+              Login to FloodShield
 
               <span className="material-symbols-outlined">
                 arrow_forward
@@ -202,13 +209,13 @@ const Login = () => {
 
           <div className="lgx-footer">
             <p className="lgx-footer-text">
-              Authorized personnel only.
+              To Create New Account
               <br />
               <a
                 href="/register"
                 className="lgx-footer-link"
               >
-                Request Access
+                Register
               </a>
             </p>
           </div>
