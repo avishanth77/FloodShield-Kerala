@@ -7,7 +7,7 @@ function NewsCard() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/news/")
+      .get("https://teflon.pythonanywhere.com/api/news/")
       .then((response) => {
         setNews(response.data);
       })

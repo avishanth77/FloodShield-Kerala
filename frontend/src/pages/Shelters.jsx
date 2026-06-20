@@ -9,7 +9,7 @@ function Shelters() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/shelters/")
+      .get("https://teflon.pythonanywhere.com/api/shelters/")
       .then((response) => {
         setShelters(response.data);
       })

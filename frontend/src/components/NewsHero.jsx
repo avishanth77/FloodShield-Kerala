@@ -8,7 +8,7 @@ function NewsHero() {
   useEffect(() => {
     axios
       .get(
-        "http://127.0.0.1:8000/api/news/breaking-news/"
+        "https://teflon.pythonanywhere.com/api/news/breaking-news/"
       )
       .then((response) => {
         setNews(response.data[0]);

@@ -70,7 +70,7 @@ const Volunteer = () => {
       );
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/volunteers/register/",
+        "https://teflon.pythonanywhere.com/api/volunteers/register/",
         {
           method: "POST",
           headers: {

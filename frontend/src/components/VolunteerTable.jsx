@@ -7,7 +7,7 @@ function VolunteerTable() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/volunteers/")
+      .get("https://teflon.pythonanywhere.com/api/volunteers/")
       .then((res) => setVolunteers(res.data))
       .catch((err) => console.log(err));
   }, []);
